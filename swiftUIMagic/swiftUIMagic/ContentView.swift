@@ -1,21 +1,25 @@
-//
-//  ContentView.swift
-//  swiftUIMagic
-//
-//  Created by Paul Himes on 3/21/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+
+    var isFooterStuckToBottom: Bool {
+        scrollingFooterFrame.minY < stuckToBottomFooterFrame.minY
+    }
+    @State var scrollingFooterFrame: CGRect = .zero
+    @State var stuckToBottomFooterFrame: CGRect = .zero
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack(alignment: .bottom) {
+            ScrollView {
+                VideosView()
+                FooterView()
+                    .readFrame($scrollingFooterFrame)
+                    .opacity(isFooterStuckToBottom ? 0 : 1)
+            }
+            FooterView()
+                .readFrame($stuckToBottomFooterFrame)
+                .opacity(isFooterStuckToBottom ? 1 : 0)
         }
-        .padding()
     }
 }
 

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "chris-fry-head-shot.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

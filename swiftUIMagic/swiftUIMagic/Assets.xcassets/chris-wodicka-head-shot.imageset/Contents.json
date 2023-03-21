@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "chris-wodicka-head-shot.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
