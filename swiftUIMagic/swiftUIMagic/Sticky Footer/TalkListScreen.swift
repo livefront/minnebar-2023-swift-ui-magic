@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct TalkListScreen: View {
 
     var isFooterStuckToBottom: Bool {
         scrollingFooterFrame.minY < stuckToBottomFooterFrame.minY
@@ -20,11 +20,12 @@ struct ContentView: View {
                 .readFrame($stuckToBottomFooterFrame)
                 .opacity(isFooterStuckToBottom ? 1 : 0)
         }
+        .navigationTitle("Livefront Talks")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TalkListScreen()
     }
 }

@@ -32,8 +32,17 @@ struct MainView: View {
 
     var body: some View {
         NavigationStack {
-            ContentView()
-                .navigationTitle("Livefront Talks")
+            ContentViewA()
+                .navigationDestination(for: ScreenType.self) { screenType in
+                    switch screenType {
+                    case .splash:
+                        ContentViewA()
+                    case .list:
+                        TalkListScreen()
+                    case .detail:
+                        Text("Detail Screen")
+                    }
+                }
         }
     }
 }
