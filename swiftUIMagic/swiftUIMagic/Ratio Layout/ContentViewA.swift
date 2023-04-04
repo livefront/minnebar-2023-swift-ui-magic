@@ -9,6 +9,9 @@ struct ContentViewA: View {
                     $0[VerticalAlignment.center]
                 }
             RedLine()
+                .alignmentGuide(.verticalRatio) {
+                    $0[VerticalAlignment.center]
+                }
         }
         .foregroundColor(.white)
     }
