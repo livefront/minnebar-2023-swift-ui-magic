@@ -31,14 +31,14 @@ struct VideoSummaryView: View {
                 }
                 .padding()
                 Spacer()
-                Image(systemName: "chevron.right").foregroundColor(.gray)
+                Image(systemName: "chevron.right")
+                    .imageScale(.medium)
+                    .fontWeight(.bold)
+                    .foregroundColor(.accentColor)
             }
             .fontDesign(.serif)
             .multilineTextAlignment(.leading)
             .padding()
-            .background {
-                Color.white
-            }
         }
     }
 }

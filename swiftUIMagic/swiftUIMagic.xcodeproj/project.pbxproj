@@ -24,6 +24,11 @@
 		8B4B172429CA2FA4004D5A62 /* BlueBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */; };
 		8B4B172529CA2FA4004D5A62 /* LongText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171D29CA2FA4004D5A62 /* LongText.swift */; };
 		8B4B172629CA2FA4004D5A62 /* RedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171E29CA2FA4004D5A62 /* RedLine.swift */; };
+		8B5B22C429DCA15C0039EE66 /* ColorCurveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22C329DCA15C0039EE66 /* ColorCurveBackground.swift */; };
+		8B5B22C729DCBA130039EE66 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22C629DCBA130039EE66 /* FloatingPointExtension.swift */; };
+		8B5B22C929DCBBF40039EE66 /* TalkListScreenDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22C829DCBBF40039EE66 /* TalkListScreenDecorator.swift */; };
+		8B5B22CB29DCBE6B0039EE66 /* HeaderContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22CA29DCBE6B0039EE66 /* HeaderContentView.swift */; };
+		8B5B22CD29DCCA4E0039EE66 /* View+ReadFrameAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22CC29DCCA4E0039EE66 /* View+ReadFrameAdvanced.swift */; };
 		8BD6CACF29CA323C00FFD6A9 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6CACE29CA323C00FFD6A9 /* ScreenType.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +51,11 @@
 		8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBackground.swift; sourceTree = "<group>"; };
 		8B4B171D29CA2FA4004D5A62 /* LongText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongText.swift; sourceTree = "<group>"; };
 		8B4B171E29CA2FA4004D5A62 /* RedLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedLine.swift; sourceTree = "<group>"; };
+		8B5B22C329DCA15C0039EE66 /* ColorCurveBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCurveBackground.swift; sourceTree = "<group>"; };
+		8B5B22C629DCBA130039EE66 /* FloatingPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExtension.swift; sourceTree = "<group>"; };
+		8B5B22C829DCBBF40039EE66 /* TalkListScreenDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkListScreenDecorator.swift; sourceTree = "<group>"; };
+		8B5B22CA29DCBE6B0039EE66 /* HeaderContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContentView.swift; sourceTree = "<group>"; };
+		8B5B22CC29DCCA4E0039EE66 /* View+ReadFrameAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadFrameAdvanced.swift"; sourceTree = "<group>"; };
 		8BD6CACE29CA323C00FFD6A9 /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,11 +111,10 @@
 		8B4B171529CA2F75004D5A62 /* Sticky Footer */ = {
 			isa = PBXGroup;
 			children = (
+				8B5B22CE29DD48B60039EE66 /* Helpers */,
 				8B4B170A29CA2E9C004D5A62 /* TalkListScreen.swift */,
-				8B4B170B29CA2E9C004D5A62 /* FooterView.swift */,
-				8B4B170D29CA2E9C004D5A62 /* VideoSummaryView.swift */,
-				8B4B170C29CA2E9C004D5A62 /* VideosView.swift */,
 				8B4B170E29CA2E9C004D5A62 /* View+ReadFrame.swift */,
+				8B5B22CC29DCCA4E0039EE66 /* View+ReadFrameAdvanced.swift */,
 			);
 			path = "Sticky Footer";
 			sourceTree = "<group>";
@@ -113,16 +122,38 @@
 		8B4B171629CA2F84004D5A62 /* Ratio Layout */ = {
 			isa = PBXGroup;
 			children = (
-				8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */,
+				8B5B22CF29DD4A730039EE66 /* Helpers */,
 				8B4B171B29CA2FA4004D5A62 /* ContentViewA.swift */,
 				8B4B171929CA2FA4004D5A62 /* ContentViewB.swift */,
-				8B4B171D29CA2FA4004D5A62 /* LongText.swift */,
-				8B4B171E29CA2FA4004D5A62 /* RedLine.swift */,
-				8B4B171829CA2FA4004D5A62 /* ShortText.swift */,
 				8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */,
 				8B4B171A29CA2FA4004D5A62 /* VerticalRatioLayout.swift */,
 			);
 			path = "Ratio Layout";
+			sourceTree = "<group>";
+		};
+		8B5B22CE29DD48B60039EE66 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B5B22CA29DCBE6B0039EE66 /* HeaderContentView.swift */,
+				8B5B22C329DCA15C0039EE66 /* ColorCurveBackground.swift */,
+				8B5B22C629DCBA130039EE66 /* FloatingPointExtension.swift */,
+				8B5B22C829DCBBF40039EE66 /* TalkListScreenDecorator.swift */,
+				8B4B170B29CA2E9C004D5A62 /* FooterView.swift */,
+				8B4B170D29CA2E9C004D5A62 /* VideoSummaryView.swift */,
+				8B4B170C29CA2E9C004D5A62 /* VideosView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B5B22CF29DD4A730039EE66 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B4B171829CA2FA4004D5A62 /* ShortText.swift */,
+				8B4B171D29CA2FA4004D5A62 /* LongText.swift */,
+				8B4B171E29CA2FA4004D5A62 /* RedLine.swift */,
+				8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,11 +229,15 @@
 				8B4B16EF29CA2DA2004D5A62 /* swiftUIMagicApp.swift in Sources */,
 				8B4B172029CA2FA4004D5A62 /* ShortText.swift in Sources */,
 				8B4B171229CA2E9C004D5A62 /* VideosView.swift in Sources */,
+				8B5B22C429DCA15C0039EE66 /* ColorCurveBackground.swift in Sources */,
 				8B4B171129CA2E9C004D5A62 /* FooterView.swift in Sources */,
 				8B4B172529CA2FA4004D5A62 /* LongText.swift in Sources */,
 				8B4B170F29CA2E9C004D5A62 /* MainView.swift in Sources */,
 				8B4B171029CA2E9C004D5A62 /* TalkListScreen.swift in Sources */,
+				8B5B22C729DCBA130039EE66 /* FloatingPointExtension.swift in Sources */,
+				8B5B22CB29DCBE6B0039EE66 /* HeaderContentView.swift in Sources */,
 				8B4B171329CA2E9C004D5A62 /* VideoSummaryView.swift in Sources */,
+				8B5B22C929DCBBF40039EE66 /* TalkListScreenDecorator.swift in Sources */,
 				8B4B172629CA2FA4004D5A62 /* RedLine.swift in Sources */,
 				8B4B172129CA2FA4004D5A62 /* ContentViewB.swift in Sources */,
 				8B4B172329CA2FA4004D5A62 /* ContentViewA.swift in Sources */,
@@ -211,6 +246,7 @@
 				8BD6CACF29CA323C00FFD6A9 /* ScreenType.swift in Sources */,
 				8B4B172229CA2FA4004D5A62 /* VerticalRatioLayout.swift in Sources */,
 				8B4B171F29CA2FA4004D5A62 /* VerticalRatioAlignment.swift in Sources */,
+				8B5B22CD29DCCA4E0039EE66 /* View+ReadFrameAdvanced.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

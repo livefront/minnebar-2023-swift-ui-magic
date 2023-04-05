@@ -5,8 +5,8 @@ extension View {
         background {
             GeometryReader { geometry in
                 Color.clear
-                    .preference(key: FramePreferenceKey.self, value: geometry.frame(in: .global))
-                    .onPreferenceChange(FramePreferenceKey.self) { frame in
+                    .preference(key: SimpleFramePreferenceKey.self, value: geometry.frame(in: .global))
+                    .onPreferenceChange(SimpleFramePreferenceKey.self) { frame in
                         binding.wrappedValue = frame
                     }
             }
@@ -14,7 +14,7 @@ extension View {
     }
 }
 
-private struct FramePreferenceKey: PreferenceKey {
+private struct SimpleFramePreferenceKey: PreferenceKey {
     static var defaultValue = CGRect.zero
 
     static func reduce(value: inout CGRect, nextValue: () -> CGRect) {

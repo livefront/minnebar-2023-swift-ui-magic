@@ -5,13 +5,16 @@ struct LongText: View {
         NavigationLink(value: ScreenType.list) {
             HStack {
                 Text("Hello, Livefront! This is a lot of text that may wrap to many lines and get very large. We want it to be vertically centered at the designated location proportional to the container view. **THE END**")
-                Image(systemName: "chevron.right").fontWeight(.heavy)
+                Image(systemName: "chevron.right")
+                    .fontWeight(.heavy)
+                    .foregroundColor(.accentColor)
             }
-            .font(.title)
-            .background(Color.black.opacity(0.5))
+            .font(.largeTitle)
+            .fontDesign(.rounded)
             .minimumScaleFactor(0.5)
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .multilineTextAlignment(.leading)
+            .padding()
         }
     }
 }

@@ -49,15 +49,13 @@ struct VideosView: View {
                 description: "11/2021"
             )
         }
-        .background {
-            Color.white
-        }
         .onTapGesture {
             withAnimation {
                 moreContent = !moreContent
             }
         }
-        .padding([.top], 20)
+        .writeFrame(to: VideosViewFramePreferenceKey.self)
+//        .padding([.top], 10)
     }
 }
 
@@ -66,3 +64,5 @@ struct VideosView_Previews: PreviewProvider {
         VideosView()
     }
 }
+
+struct VideosViewFramePreferenceKey: FramePreferenceKey {}

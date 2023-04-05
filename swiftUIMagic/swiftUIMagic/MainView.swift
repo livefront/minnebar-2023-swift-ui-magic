@@ -38,7 +38,7 @@ struct MainView: View {
                     case .splash:
                         ContentViewA()
                     case .list:
-                        TalkListScreen()
+                        TalkListScreenDecorator()
                     case .detail:
                         Text("Detail Screen")
                     }
