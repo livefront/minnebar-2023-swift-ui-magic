@@ -2,7 +2,8 @@ import SwiftUI
 
 struct VideosView: View {
 
-    @State var moreContent = false
+    /// `true` if the expanded content list should be shown.
+    @Environment(\.videosMoreContent) var moreContent
 
     var body: some View {
         VStack(spacing: 0) {
@@ -49,13 +50,7 @@ struct VideosView: View {
                 description: "11/2021"
             )
         }
-        .onTapGesture {
-            withAnimation {
-                moreContent = !moreContent
-            }
-        }
         .writeFrame(to: VideosViewFramePreferenceKey.self)
-//        .padding([.top], 10)
     }
 }
 
@@ -65,4 +60,27 @@ struct VideosView_Previews: PreviewProvider {
     }
 }
 
+/// Stores the more content flag for ``VideosView``.
+private struct VideosMoreContentKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+extension EnvironmentValues {
+    /// Controls the more content flag of the ``VideosView``.
+    var videosMoreContent: Bool {
+        get { self[VideosMoreContentKey.self] }
+        set { self[VideosMoreContentKey.self] = newValue }
+    }
+}
+
+/// Sends the ``VideosView``'s frame up through preferences.
 struct VideosViewFramePreferenceKey: FramePreferenceKey {}
+
+/// Sends the ``VideosView``'s desire to show more content up through preferences.
+struct VideosWantsMoreContentKey: PreferenceKey {
+    static var defaultValue = false
+
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = nextValue()
+    }
+}

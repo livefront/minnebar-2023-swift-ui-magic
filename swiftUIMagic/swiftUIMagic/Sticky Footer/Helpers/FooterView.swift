@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct FooterView: View {
+
+    /// Stores a variable to update a preference for expanding the videos list.
+    @State var wantsMoreContent = false
+
     var body: some View {
         Text("More Talks Coming Soon!")
             .foregroundColor(Color("navy-blue"))
@@ -8,6 +12,10 @@ struct FooterView: View {
             .fontWeight(.heavy)
             .fontDesign(.rounded)
             .padding()
+            .onTapGesture {
+                wantsMoreContent = !wantsMoreContent
+            }
+            .preference(key: VideosWantsMoreContentKey.self, value: wantsMoreContent)
     }
 }
 

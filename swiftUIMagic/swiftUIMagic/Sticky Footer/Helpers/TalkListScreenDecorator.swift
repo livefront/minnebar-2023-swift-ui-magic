@@ -2,9 +2,14 @@ import SwiftUI
 
 struct TalkListScreenDecorator: View {
 
+    /// The frame (in screen coordinates) of the scrolling content.
     @State var scrollViewContentFrame: CGRect = .zero
+    /// The frame (in screen coordinates) of the scroll view.
     @State var scrollViewFrame: CGRect = .zero
+    /// The frame (in screen coordinates) of the videos list view.
     @State var videosViewFrame: CGRect = .zero
+    /// `true` if the videos list view should show an expanded list of talks.
+    @State var videosMoreContent = false
 
     /// Calculates the top padding of the background color curve to control the vertical location of
     /// the bottom curve. The value ranges are designed to cause the background curve to "run up" to
@@ -53,8 +58,9 @@ struct TalkListScreenDecorator: View {
                 )
             }
             TalkListScreen()
+                .environment(\.videosMoreContent, videosMoreContent)
                 .environment(\.headerOpacity, headerContentOpacity)
-                .writeFrame(to: ScrollViewFramePreferenceKey.self)
+                .writeFrame(to: TalkListScreenFramePreferenceKey.self)
             if showNavBarContent {
                 ColorCurveBackground(
                     curveHeight: headerCurveHeight,
@@ -63,8 +69,13 @@ struct TalkListScreenDecorator: View {
             }
         }
         .readFrame(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewContentFrame)
-        .readFrame(from: ScrollViewFramePreferenceKey.self, into: $scrollViewFrame)
+        .readFrame(from: TalkListScreenFramePreferenceKey.self, into: $scrollViewFrame)
         .readFrame(from: VideosViewFramePreferenceKey.self, into: $videosViewFrame)
+        .onPreferenceChange(VideosWantsMoreContentKey.self) { videosWantsMoreContent in
+            withAnimation {
+                videosMoreContent = videosWantsMoreContent
+            }
+        }
         .toolbar {
             /// Replace the navigation title with an empty view when it should be hidden.
             ToolbarItem(placement: .principal) {
@@ -87,4 +98,5 @@ struct TalkListScreenDecorator_Previews: PreviewProvider {
     }
 }
 
-struct ScrollViewFramePreferenceKey: FramePreferenceKey {}
+/// Sends the ``TalkListScreen``'s frame up through preferences.
+struct TalkListScreenFramePreferenceKey: FramePreferenceKey {}

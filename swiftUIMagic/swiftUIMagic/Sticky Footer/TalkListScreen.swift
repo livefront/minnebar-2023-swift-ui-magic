@@ -2,10 +2,15 @@ import SwiftUI
 
 struct TalkListScreen: View {
 
+    /// `true` if the footer should be stuck to the bottom of the screen.
     var isFooterStuckToBottom: Bool {
         scrollingFooterFrame.minY < stuckToBottomFooterFrame.minY
     }
+
+    /// The frame of the scrollable footer view.
     @State var scrollingFooterFrame: CGRect = .zero
+
+    /// The frame of the non-scrollable footer view.
     @State var stuckToBottomFooterFrame: CGRect = .zero
 
     var body: some View {

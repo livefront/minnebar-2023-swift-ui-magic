@@ -89,11 +89,9 @@
 		8B4B16ED29CA2DA2004D5A62 /* swiftUIMagic */ = {
 			isa = PBXGroup;
 			children = (
+				8B5B22D029DDBB8C0039EE66 /* Helpers */,
 				8B4B171629CA2F84004D5A62 /* Ratio Layout */,
 				8B4B171529CA2F75004D5A62 /* Sticky Footer */,
-				8B4B16EE29CA2DA2004D5A62 /* swiftUIMagicApp.swift */,
-				8B4B170929CA2E9C004D5A62 /* MainView.swift */,
-				8BD6CACE29CA323C00FFD6A9 /* ScreenType.swift */,
 				8B4B16F229CA2DA3004D5A62 /* Assets.xcassets */,
 				8B4B16F429CA2DA3004D5A62 /* Preview Content */,
 			);
@@ -134,11 +132,11 @@
 		8B5B22CE29DD48B60039EE66 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8B5B22CA29DCBE6B0039EE66 /* HeaderContentView.swift */,
 				8B5B22C329DCA15C0039EE66 /* ColorCurveBackground.swift */,
 				8B5B22C629DCBA130039EE66 /* FloatingPointExtension.swift */,
-				8B5B22C829DCBBF40039EE66 /* TalkListScreenDecorator.swift */,
 				8B4B170B29CA2E9C004D5A62 /* FooterView.swift */,
+				8B5B22CA29DCBE6B0039EE66 /* HeaderContentView.swift */,
+				8B5B22C829DCBBF40039EE66 /* TalkListScreenDecorator.swift */,
 				8B4B170D29CA2E9C004D5A62 /* VideoSummaryView.swift */,
 				8B4B170C29CA2E9C004D5A62 /* VideosView.swift */,
 			);
@@ -148,10 +146,20 @@
 		8B5B22CF29DD4A730039EE66 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8B4B171829CA2FA4004D5A62 /* ShortText.swift */,
+				8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */,
 				8B4B171D29CA2FA4004D5A62 /* LongText.swift */,
 				8B4B171E29CA2FA4004D5A62 /* RedLine.swift */,
-				8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */,
+				8B4B171829CA2FA4004D5A62 /* ShortText.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B5B22D029DDBB8C0039EE66 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B4B170929CA2E9C004D5A62 /* MainView.swift */,
+				8BD6CACE29CA323C00FFD6A9 /* ScreenType.swift */,
+				8B4B16EE29CA2DA2004D5A62 /* swiftUIMagicApp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
