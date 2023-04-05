@@ -56,6 +56,7 @@ struct TalkListScreenDecorator: View {
                     curveHeight: headerCurveHeight,
                     topPadding: backgroundCurveTopPadding
                 )
+                .edgesIgnoringSafeArea([.leading, .trailing])
             }
             TalkListScreen()
                 .environment(\.videosMoreContent, videosMoreContent)
@@ -66,6 +67,7 @@ struct TalkListScreenDecorator: View {
                     curveHeight: headerCurveHeight,
                     topPadding: 0 // 0 aligns the top of the curve with the top of the safe area.
                 )
+                .edgesIgnoringSafeArea([.leading, .trailing])
             }
         }
         .readFrame(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewContentFrame)
@@ -79,7 +81,7 @@ struct TalkListScreenDecorator: View {
         .toolbar {
             /// Replace the navigation title with an empty view when it should be hidden.
             ToolbarItem(placement: .principal) {
-                if !showNavBarContent {
+                if headerContentOpacity > 0.1 {
                     Text("")
                 }
             }
