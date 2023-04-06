@@ -1,14 +1,19 @@
 import SwiftUI
 
-struct VideoSummaryView: View {
+struct DetailScreen: View {
 
-    let imageSize: CGFloat = 80
+    let imageSize: CGFloat = 150
     let talk: Talk
 
     var body: some View {
-        NavigationLink(value: ScreenType.detail(talk)) {
-            VStack {
-                HStack {
+        ZStack {
+            ColorCurveBackground(
+                curveHeight: 16,
+                topPadding: 100
+            )
+            .edgesIgnoringSafeArea([.leading, .trailing])
+            VStack(alignment: .leading, spacing: 24) {
+                HStack(alignment: .top) {
                     Image(talk.imageName)
                         .resizable()
                         .imageScale(.large)
@@ -20,37 +25,39 @@ struct VideoSummaryView: View {
                         )
                     VStack(alignment: .leading) {
                         Text(talk.title)
-                            .lineLimit(2)
-                            .font(.title3)
+                            .font(.title)
                             .fontWeight(.black)
                         Text(talk.date)
                             .font(.body)
                             .fontWeight(.thin)
                     }
                     .foregroundColor(.primary)
-                    .padding()
+                    .fontDesign(.serif)
+                    .multilineTextAlignment(.leading)
                     Spacer()
-                    Image(systemName: "chevron.right")
-                        .imageScale(.medium)
-                        .fontWeight(.bold)
-                        .foregroundColor(.accentColor)
                 }
-                .fontDesign(.serif)
-                .multilineTextAlignment(.leading)
-                .padding()
+                Text(talk.longDescription)
+                    .font(.body)
+                    .multilineTextAlignment(.leading)
+                Image("video")
+                    .resizable()
+                    .aspectRatio(16.0/10.0, contentMode: .fit)
+                    .cornerRadius(16)
+                Spacer()
             }
+            .padding()
         }
     }
 }
 
-struct VideoSummaryView_Previews: PreviewProvider {
+struct DetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        VideoSummaryView(
+        DetailScreen(
             talk: Talk(
                 imageName: "tyler-johnson-head-shot",
                 title: "Title",
                 date: "Date",
-                longDescription: "This is a longDescription of the talk."
+                longDescription: "This is a description of the talk."
             )
         )
     }

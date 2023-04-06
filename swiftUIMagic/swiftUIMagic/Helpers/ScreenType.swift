@@ -1,5 +1,5 @@
-enum ScreenType {
+enum ScreenType: Equatable, Hashable {
     case splash
     case list
-    case detail
+    case detail(Talk)
 }

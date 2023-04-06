@@ -10,9 +10,9 @@ struct MainView: View {
                     case .splash:
                         ContentViewA()
                     case .list:
-                        TalkListScreenDecorator()
-                    case .detail:
-                        Text("Detail Screen")
+                        ListScreenDecorator()
+                    case .detail(let talk):
+                        DetailScreen(talk: talk)
                     }
                 }
         }

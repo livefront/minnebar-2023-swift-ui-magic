@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TalkListScreenDecorator: View {
+struct ListScreenDecorator: View {
 
     /// The frame (in screen coordinates) of the scrolling content.
     @State var scrollViewContentFrame: CGRect = .zero
@@ -33,9 +33,6 @@ struct TalkListScreenDecorator: View {
             .map(domain: (maxScroll, minScroll), range: (maxOpacity, minOpacity))
     }
 
-    /// The color of the header background.
-    let headerColor = Color(red: 0.9, green: 0.9, blue: 0.9)
-
     /// The curve height of the header background shape.
     let headerCurveHeight: CGFloat = 16
 
@@ -58,7 +55,7 @@ struct TalkListScreenDecorator: View {
                 )
                 .edgesIgnoringSafeArea([.leading, .trailing])
             }
-            TalkListScreen()
+            ListScreen()
                 .environment(\.videosMoreContent, videosMoreContent)
                 .environment(\.headerOpacity, headerContentOpacity)
                 .writeFrame(to: TalkListScreenFramePreferenceKey.self)
@@ -95,10 +92,10 @@ struct TalkListScreenDecorator: View {
 struct TalkListScreenDecorator_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            TalkListScreenDecorator()
+            ListScreenDecorator()
         }
     }
 }
 
-/// Sends the ``TalkListScreen``'s frame up through preferences.
+/// Sends the ``ListScreen``'s frame up through preferences.
 struct TalkListScreenFramePreferenceKey: FramePreferenceKey {}

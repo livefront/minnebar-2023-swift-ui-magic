@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TalkListScreen: View {
+struct ListScreen: View {
 
     /// `true` if the footer should be stuck to the bottom of the screen.
     var isFooterStuckToBottom: Bool {
@@ -31,10 +31,10 @@ struct TalkListScreen: View {
     }
 }
 
-struct TalkListScreen_Previews: PreviewProvider {
+struct ListScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            TalkListScreen()
+            ListScreen()
         }
     }
 }
