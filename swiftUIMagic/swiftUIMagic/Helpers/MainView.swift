@@ -11,8 +11,6 @@ struct MainView: View {
                         ContentViewA()
                     case .list:
                         ListScreenDecorator()
-                    case .detail(let talk):
-                        DetailScreen(talk: talk)
                     }
                 }
         }

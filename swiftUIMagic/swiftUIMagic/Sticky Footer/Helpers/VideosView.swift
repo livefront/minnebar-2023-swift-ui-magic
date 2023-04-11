@@ -4,14 +4,34 @@ struct VideosView: View {
 
     /// `true` if the expanded content list should be shown.
     @Environment(\.videosMoreContent) var moreContent
+    @Namespace var namespace
+    @State private var selectedTalk: Talk? = nil
 
     var body: some View {
-        VStack(spacing: 0) {
-            ForEach(moreContent ? Talk.longList : Talk.shortList) { talk in
-                VideoSummaryView(talk: talk)
+        if let talk = selectedTalk {
+            DetailScreen(namespace: namespace, talk: talk)
+                .navigationBarItems(trailing: HStack {
+                    Button(
+                        action: { tapTalk(nil) },
+                        label: { Text("Done") }
+                    )
+                })
+                .navigationBarBackButtonHidden(true)
+        } else {
+            VStack(spacing: 0) {
+                ForEach(moreContent ? Talk.longList : Talk.shortList) { talk in
+                    VideoSummaryView(namespace: namespace, talk: talk)
+                        .onTapGesture {
+                            tapTalk(talk)
+                        }
+                }
             }
+            .writeFrame(to: VideosViewFramePreferenceKey.self)
         }
-        .writeFrame(to: VideosViewFramePreferenceKey.self)
+    }
+
+    func tapTalk(_ talk: Talk?) {
+        withAnimation(.easeInOut(duration: 0.3)) { self.selectedTalk = talk }
     }
 }
 
@@ -30,7 +50,10 @@ extension EnvironmentValues {
     /// Controls the more content flag of the ``VideosView``.
     var videosMoreContent: Bool {
         get { self[VideosMoreContentKey.self] }
-        set { self[VideosMoreContentKey.self] = newValue }
+        set {
+            print("videosMoreContent is changing: \(newValue)")
+            self[VideosMoreContentKey.self] = newValue
+        }
     }
 }
 
