@@ -4,6 +4,7 @@ struct TitleScreen: View {
     var body: some View {
         ZStack(alignment: .center) {
             BlueBackground()
+            BubblesView()
             ShortText()
 //            RedLine()
         }
