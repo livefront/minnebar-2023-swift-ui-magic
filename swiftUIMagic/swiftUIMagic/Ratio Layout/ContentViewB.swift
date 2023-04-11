@@ -4,6 +4,7 @@ struct ContentViewB: View {
     var body: some View {
         VerticalRatioLayout(ratio: 0.66) {
             BlueBackground()
+            BubblesView()
             ShortText()
 //            RedLine()
         }

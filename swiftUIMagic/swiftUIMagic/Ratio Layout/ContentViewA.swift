@@ -4,6 +4,7 @@ struct ContentViewA: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .verticalRatio)) {
             BlueBackground()
+            BubblesView()
             ShortText()
                 .alignmentGuide(.verticalRatio) {
                     $0[VerticalAlignment.center]
