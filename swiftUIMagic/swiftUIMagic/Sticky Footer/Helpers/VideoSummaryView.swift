@@ -12,16 +12,17 @@ struct VideoSummaryView: View {
                 Image(talk.imageName)
                     .resizable()
                     .imageScale(.large)
+                    // Step 1: Add a matched geometry effect to the source
+                    // TODO: Tyler - Add a shortcut for this
+                    .matchedGeometryEffect(id: talk.imageName, in: namespace, properties: .frame, isSource: true)
+                    .frame(width: imageSize, height: imageSize)
                     .clipShape(Circle())
                     .overlay(
                         Circle()
                             .stroke(.gray, lineWidth: 1)
                     )
-                    .matchedGeometryEffect(id: talk.imageName, in: namespace, properties: .frame, isSource: true)
-                    .frame(width: imageSize, height: imageSize)
                 VStack(alignment: .leading) {
                     Text(talk.title)
-                        .matchedGeometryEffect(id: talk.title, in: namespace, properties: .frame, isSource: true)
                         .lineLimit(2)
                         .font(.title3)
                         .fontWeight(.black)

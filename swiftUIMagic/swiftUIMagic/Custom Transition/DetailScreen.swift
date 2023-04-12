@@ -12,16 +12,17 @@ struct DetailScreen: View {
                 Image(talk.imageName)
                     .resizable()
                     .imageScale(.large)
+                    // Step 2: Add a matched geometry effect to the destination
+                    // TODO: Tyler - Add a shortcut for this
+                    .matchedGeometryEffect(id: talk.imageName, in: namespace, properties: .frame, isSource: true)
+                    .frame(width: imageSize, height: imageSize)
                     .clipShape(Circle())
                     .overlay(
                         Circle()
                             .stroke(.gray, lineWidth: 1)
                     )
-                    .matchedGeometryEffect(id: talk.imageName, in: namespace, properties: .frame, isSource: true)
-                    .frame(width: imageSize, height: imageSize)
                 VStack(alignment: .leading) {
                     Text(talk.title)
-//                        .matchedGeometryEffect(id: talk.title, in: namespace, properties: .frame, isSource: false)
                         .font(.title)
                         .fontWeight(.black)
                     Text(talk.date)
