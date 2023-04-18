@@ -2,18 +2,11 @@ import SwiftUI
 
 struct TitleScreen: View {
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .leading, vertical: .verticalRatio)) {
+        ZStack(alignment: .center) {
             BlueBackground()
             ShortText()
-                .alignmentGuide(.verticalRatio) {
-                    $0[VerticalAlignment.center]
-                }
-            RedLine()
-                .alignmentGuide(.verticalRatio) {
-                    $0[VerticalAlignment.center]
-                }
+//            RedLine()
         }
-        .foregroundColor(.white)
     }
 }
 

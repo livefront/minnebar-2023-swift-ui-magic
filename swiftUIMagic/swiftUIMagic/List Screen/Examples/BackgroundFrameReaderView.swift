@@ -6,7 +6,7 @@ struct BackgroundFrameReaderView: View {
         VStack {
             Spacer()
             Text("Hello, World!")
-            Color.blue.frame(height: 50)
+            Color.blue.frame(height: 100)
             Spacer()
         }
     }
