@@ -18,7 +18,21 @@ struct TalksScreen: View {
             ScrollView {
                 VStack(spacing: 0) {
                     HeaderContentView()
-                    TalkListView()
+                    ForEach(Talk.list) { talk in
+                        NavigationLink(value: ScreenType.detail(talk)) {
+                            TalkView(title: talk.title, date: talk.date) {
+                                Image(talk.imageName)
+                                    .resizable()
+                                    .imageScale(.large)
+                                    .frame(width: smallImageSize, height: smallImageSize)
+                                    .clipShape(Circle())
+                                    .overlay(
+                                        Circle()
+                                            .stroke(.gray, lineWidth: 1)
+                                    )
+                            }
+                        }
+                    }
                     FooterView()
                         .readFrame(into: $scrollingFooterFrame)
                         .opacity(isFooterStuckToBottom ? 0 : 1)

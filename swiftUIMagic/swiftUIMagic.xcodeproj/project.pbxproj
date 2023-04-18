@@ -13,7 +13,6 @@
 		8B4B170F29CA2E9C004D5A62 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B170929CA2E9C004D5A62 /* MainView.swift */; };
 		8B4B171029CA2E9C004D5A62 /* TalksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B170A29CA2E9C004D5A62 /* TalksScreen.swift */; };
 		8B4B171129CA2E9C004D5A62 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B170B29CA2E9C004D5A62 /* FooterView.swift */; };
-		8B4B171229CA2E9C004D5A62 /* TalkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B170C29CA2E9C004D5A62 /* TalkListView.swift */; };
 		8B4B171F29CA2FA4004D5A62 /* VerticalRatioAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */; };
 		8B4B172029CA2FA4004D5A62 /* ShortText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171829CA2FA4004D5A62 /* ShortText.swift */; };
 		8B4B172229CA2FA4004D5A62 /* VerticalRatioLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171A29CA2FA4004D5A62 /* VerticalRatioLayout.swift */; };
@@ -30,6 +29,7 @@
 		8B5B22D929DF68C30039EE66 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22D829DF68C30039EE66 /* Talk.swift */; };
 		8BCD057B29EDC30D005CD88E /* BackgroundFrameReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD057A29EDC30D005CD88E /* BackgroundFrameReaderView.swift */; };
 		8BCD057C29EDED6F005CD88E /* BackgroundFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD057829EDC0FE005CD88E /* BackgroundFrameView.swift */; };
+		8BCD057E29EE7898005CD88E /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD057D29EE7898005CD88E /* TalkView.swift */; };
 		8BD6CACF29CA323C00FFD6A9 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6CACE29CA323C00FFD6A9 /* ScreenType.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,6 @@
 		8B4B170929CA2E9C004D5A62 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8B4B170A29CA2E9C004D5A62 /* TalksScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalksScreen.swift; sourceTree = "<group>"; };
 		8B4B170B29CA2E9C004D5A62 /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		8B4B170C29CA2E9C004D5A62 /* TalkListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkListView.swift; sourceTree = "<group>"; };
 		8B4B170E29CA2E9C004D5A62 /* View+ReadFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ReadFrame.swift"; sourceTree = "<group>"; };
 		8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalRatioAlignment.swift; sourceTree = "<group>"; };
 		8B4B171829CA2FA4004D5A62 /* ShortText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortText.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		8B5B22D829DF68C30039EE66 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		8BCD057829EDC0FE005CD88E /* BackgroundFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFrameView.swift; sourceTree = "<group>"; };
 		8BCD057A29EDC30D005CD88E /* BackgroundFrameReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFrameReaderView.swift; sourceTree = "<group>"; };
+		8BCD057D29EE7898005CD88E /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		8BD6CACE29CA323C00FFD6A9 /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +142,7 @@
 				8B4B170B29CA2E9C004D5A62 /* FooterView.swift */,
 				8B5B22CA29DCBE6B0039EE66 /* HeaderContentView.swift */,
 				8B5B22C829DCBBF40039EE66 /* ListScreenDecorator.swift */,
-				8B4B170C29CA2E9C004D5A62 /* TalkListView.swift */,
+				8BCD057D29EE7898005CD88E /* TalkView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -279,9 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BCD057E29EE7898005CD88E /* TalkView.swift in Sources */,
 				8B4B16EF29CA2DA2004D5A62 /* swiftUIMagicApp.swift in Sources */,
 				8B4B172029CA2FA4004D5A62 /* ShortText.swift in Sources */,
-				8B4B171229CA2E9C004D5A62 /* TalkListView.swift in Sources */,
 				8B5B22C429DCA15C0039EE66 /* ColorCurveBackground.swift in Sources */,
 				8B4B171129CA2E9C004D5A62 /* FooterView.swift in Sources */,
 				8B4B172529CA2FA4004D5A62 /* LongText.swift in Sources */,

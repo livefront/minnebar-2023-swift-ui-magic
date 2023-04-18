@@ -2,20 +2,18 @@ import SwiftUI
 
 struct ListScreenDecorator: View {
 
-    /// The frame (in screen coordinates) of the scrolling content.
-    @State var scrollViewContentFrame: CGRect = .zero
+    /// The frame (in screen coordinates) of the scrolling header content.
+    @State var scrollViewHeaderContentFrame: CGRect = .zero
     /// The frame (in screen coordinates) of the scroll view.
     @State var scrollViewFrame: CGRect = .zero
-    /// The frame (in screen coordinates) of the talk list view.
-    @State var talkListViewFrame: CGRect = .zero
 
     /// Calculates the top padding of the background color curve to control the vertical location of
     /// the bottom curve. The value ranges are designed to cause the background curve to "run up" to
     /// meet the bottom of the navigation bar as the user scrolls the content up.
     var backgroundCurveTopPadding: CGFloat {
         let minPadding: CGFloat = 0
-        let maxPadding = talkListViewFrame.minY - scrollViewContentFrame.minY + max(0, scrollViewOffset) + scrollViewFrame.height / 10
-        let minScroll: CGFloat = -(talkListViewFrame.minY - scrollViewContentFrame.minY)
+        let maxPadding = scrollViewHeaderContentFrame.maxY - scrollViewHeaderContentFrame.minY + max(0, scrollViewOffset) + scrollViewFrame.height / 10
+        let minScroll: CGFloat = -(scrollViewHeaderContentFrame.maxY - scrollViewHeaderContentFrame.minY)
         let maxScroll = max(0, scrollViewOffset)
         return scrollViewOffset
             .map(domain: (maxScroll, minScroll), range: (maxPadding, minPadding))
@@ -25,7 +23,7 @@ struct ListScreenDecorator: View {
     var headerContentOpacity: CGFloat {
         let minOpacity: CGFloat = 0
         let maxOpacity: CGFloat = 1
-        let minScroll: CGFloat = -(talkListViewFrame.minY - scrollViewContentFrame.minY) + 20
+        let minScroll: CGFloat = -(scrollViewHeaderContentFrame.maxY - scrollViewHeaderContentFrame.minY) + 20
         let maxScroll = max(0, scrollViewOffset)
         return scrollViewOffset
             .map(domain: (maxScroll, minScroll), range: (maxOpacity, minOpacity))
@@ -36,7 +34,7 @@ struct ListScreenDecorator: View {
 
     /// The offset of the scroll view content from the frame of the scroll view.
     var scrollViewOffset: CGFloat {
-        return scrollViewContentFrame.origin.y - scrollViewFrame.origin.y
+        return scrollViewHeaderContentFrame.origin.y - scrollViewFrame.origin.y
     }
 
     /// `true` iff the navigation bar title and settings button should be shown.
@@ -64,9 +62,8 @@ struct ListScreenDecorator: View {
                 .edgesIgnoringSafeArea([.leading, .trailing])
             }
         }
-        .readFrame(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewContentFrame)
+        .readFrame(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewHeaderContentFrame)
         .readFrame(from: TalkListScreenFramePreferenceKey.self, into: $scrollViewFrame)
-        .readFrame(from: TalkListViewFramePreferenceKey.self, into: $talkListViewFrame)
         .toolbar {
             /// Replace the navigation title with an empty view when it should be hidden.
             ToolbarItem(placement: .principal) {

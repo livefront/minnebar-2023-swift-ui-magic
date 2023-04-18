@@ -37,3 +37,6 @@ struct Talk: Equatable, Hashable, Identifiable {
         ),
     ]
 }
+
+let smallImageSize: CGFloat = 80
+
