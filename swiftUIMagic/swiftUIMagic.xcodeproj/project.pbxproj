@@ -93,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				8B5B22D429DF5D630039EE66 /* Custom Animation */,
-				8B4B171629CA2F84004D5A62 /* Ratio Layout */,
-				8B4B171529CA2F75004D5A62 /* Sticky Footer */,
+				8B4B171629CA2F84004D5A62 /* Title Screen */,
+				8B4B171529CA2F75004D5A62 /* List Screen */,
 				8B5B22D229DF5D360039EE66 /* Custom Transition */,
 				8B5B22D029DDBB8C0039EE66 /* Helpers */,
 				8B4B16F229CA2DA3004D5A62 /* Assets.xcassets */,
@@ -111,7 +111,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8B4B171529CA2F75004D5A62 /* Sticky Footer */ = {
+		8B4B171529CA2F75004D5A62 /* List Screen */ = {
 			isa = PBXGroup;
 			children = (
 				8BCD057729EDC0EB005CD88E /* Examples */,
@@ -120,10 +120,10 @@
 				8B4B170E29CA2E9C004D5A62 /* View+ReadFrame.swift */,
 				8B5B22CC29DCCA4E0039EE66 /* View+ReadFrameAdvanced.swift */,
 			);
-			path = "Sticky Footer";
+			path = "List Screen";
 			sourceTree = "<group>";
 		};
-		8B4B171629CA2F84004D5A62 /* Ratio Layout */ = {
+		8B4B171629CA2F84004D5A62 /* Title Screen */ = {
 			isa = PBXGroup;
 			children = (
 				8B5B22CF29DD4A730039EE66 /* Helpers */,
@@ -131,7 +131,7 @@
 				8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */,
 				8B4B171A29CA2FA4004D5A62 /* VerticalRatioLayout.swift */,
 			);
-			path = "Ratio Layout";
+			path = "Title Screen";
 			sourceTree = "<group>";
 		};
 		8B5B22CE29DD48B60039EE66 /* Helpers */ = {

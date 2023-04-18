@@ -20,7 +20,7 @@ struct VerticalRatioLayout: Layout {
                 ProposedViewSize(width: bounds.width, height: bounds.height)
             )
 
-            let idealCenter = bounds.minY + bounds.height * ratio
+            let idealCenter = bounds.height * ratio
             let height = min(sizeThatFits.height, bounds.height)
             let width = min(sizeThatFits.width, bounds.width)
             let halfHeight = height / 2
