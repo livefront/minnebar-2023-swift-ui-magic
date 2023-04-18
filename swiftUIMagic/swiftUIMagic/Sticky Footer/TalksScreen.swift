@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ListScreen: View {
+struct TalksScreen: View {
 
     /// `true` if the footer should be stuck to the bottom of the screen.
     var isFooterStuckToBottom: Bool {
@@ -18,14 +18,14 @@ struct ListScreen: View {
             ScrollView {
                 VStack(spacing: 0) {
                     HeaderContentView()
-                    VideosView()
+                    TalkListView()
                     FooterView()
-                        .readFrame($scrollingFooterFrame)
+                        .readFrame(into: $scrollingFooterFrame)
                         .opacity(isFooterStuckToBottom ? 0 : 1)
                 }
             }
             FooterView()
-                .readFrame($stuckToBottomFooterFrame)
+                .readFrame(into: $stuckToBottomFooterFrame)
                 .opacity(isFooterStuckToBottom ? 1 : 0)
         }
     }
@@ -34,7 +34,7 @@ struct ListScreen: View {
 struct ListScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ListScreen()
+            TalksScreen()
         }
     }
 }

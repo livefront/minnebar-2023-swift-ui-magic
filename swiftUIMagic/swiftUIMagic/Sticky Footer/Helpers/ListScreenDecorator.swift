@@ -6,18 +6,16 @@ struct ListScreenDecorator: View {
     @State var scrollViewContentFrame: CGRect = .zero
     /// The frame (in screen coordinates) of the scroll view.
     @State var scrollViewFrame: CGRect = .zero
-    /// The frame (in screen coordinates) of the videos list view.
-    @State var videosViewFrame: CGRect = .zero
-    /// `true` if the videos list view should show an expanded list of talks.
-    @State var videosMoreContent = false
+    /// The frame (in screen coordinates) of the talk list view.
+    @State var talkListViewFrame: CGRect = .zero
 
     /// Calculates the top padding of the background color curve to control the vertical location of
     /// the bottom curve. The value ranges are designed to cause the background curve to "run up" to
     /// meet the bottom of the navigation bar as the user scrolls the content up.
     var backgroundCurveTopPadding: CGFloat {
         let minPadding: CGFloat = 0
-        let maxPadding = videosViewFrame.minY - scrollViewContentFrame.minY + max(0, scrollViewOffset) + scrollViewFrame.height / 10
-        let minScroll: CGFloat = -(videosViewFrame.minY - scrollViewContentFrame.minY)
+        let maxPadding = talkListViewFrame.minY - scrollViewContentFrame.minY + max(0, scrollViewOffset) + scrollViewFrame.height / 10
+        let minScroll: CGFloat = -(talkListViewFrame.minY - scrollViewContentFrame.minY)
         let maxScroll = max(0, scrollViewOffset)
         return scrollViewOffset
             .map(domain: (maxScroll, minScroll), range: (maxPadding, minPadding))
@@ -27,7 +25,7 @@ struct ListScreenDecorator: View {
     var headerContentOpacity: CGFloat {
         let minOpacity: CGFloat = 0
         let maxOpacity: CGFloat = 1
-        let minScroll: CGFloat = -(videosViewFrame.minY - scrollViewContentFrame.minY) + 20
+        let minScroll: CGFloat = -(talkListViewFrame.minY - scrollViewContentFrame.minY) + 20
         let maxScroll = max(0, scrollViewOffset)
         return scrollViewOffset
             .map(domain: (maxScroll, minScroll), range: (maxOpacity, minOpacity))
@@ -55,8 +53,7 @@ struct ListScreenDecorator: View {
                 )
                 .edgesIgnoringSafeArea([.leading, .trailing])
             }
-            ListScreen()
-                .environment(\.videosMoreContent, videosMoreContent)
+            TalksScreen()
                 .environment(\.headerOpacity, headerContentOpacity)
                 .writeFrame(to: TalkListScreenFramePreferenceKey.self)
             if showNavBarContent {
@@ -69,12 +66,7 @@ struct ListScreenDecorator: View {
         }
         .readFrame(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewContentFrame)
         .readFrame(from: TalkListScreenFramePreferenceKey.self, into: $scrollViewFrame)
-        .readFrame(from: VideosViewFramePreferenceKey.self, into: $videosViewFrame)
-        .onPreferenceChange(VideosWantsMoreContentKey.self) { videosWantsMoreContent in
-            withAnimation {
-                videosMoreContent = videosWantsMoreContent
-            }
-        }
+        .readFrame(from: TalkListViewFramePreferenceKey.self, into: $talkListViewFrame)
         .toolbar {
             /// Replace the navigation title with an empty view when it should be hidden.
             ToolbarItem(placement: .principal) {
@@ -97,5 +89,5 @@ struct TalkListScreenDecorator_Previews: PreviewProvider {
     }
 }
 
-/// Sends the ``ListScreen``'s frame up through preferences.
+/// Sends the ``TalksScreen``'s frame up through preferences.
 struct TalkListScreenFramePreferenceKey: FramePreferenceKey {}
