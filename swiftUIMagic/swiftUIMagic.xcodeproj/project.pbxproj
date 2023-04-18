@@ -16,9 +16,8 @@
 		8B4B171229CA2E9C004D5A62 /* TalkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B170C29CA2E9C004D5A62 /* TalkListView.swift */; };
 		8B4B171F29CA2FA4004D5A62 /* VerticalRatioAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */; };
 		8B4B172029CA2FA4004D5A62 /* ShortText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171829CA2FA4004D5A62 /* ShortText.swift */; };
-		8B4B172129CA2FA4004D5A62 /* ContentViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171929CA2FA4004D5A62 /* ContentViewB.swift */; };
 		8B4B172229CA2FA4004D5A62 /* VerticalRatioLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171A29CA2FA4004D5A62 /* VerticalRatioLayout.swift */; };
-		8B4B172329CA2FA4004D5A62 /* ContentViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171B29CA2FA4004D5A62 /* ContentViewA.swift */; };
+		8B4B172329CA2FA4004D5A62 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171B29CA2FA4004D5A62 /* TitleScreen.swift */; };
 		8B4B172429CA2FA4004D5A62 /* BlueBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */; };
 		8B4B172529CA2FA4004D5A62 /* LongText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171D29CA2FA4004D5A62 /* LongText.swift */; };
 		8B4B172629CA2FA4004D5A62 /* RedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171E29CA2FA4004D5A62 /* RedLine.swift */; };
@@ -46,9 +45,8 @@
 		8B4B170E29CA2E9C004D5A62 /* View+ReadFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ReadFrame.swift"; sourceTree = "<group>"; };
 		8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalRatioAlignment.swift; sourceTree = "<group>"; };
 		8B4B171829CA2FA4004D5A62 /* ShortText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortText.swift; sourceTree = "<group>"; };
-		8B4B171929CA2FA4004D5A62 /* ContentViewB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewB.swift; sourceTree = "<group>"; };
 		8B4B171A29CA2FA4004D5A62 /* VerticalRatioLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalRatioLayout.swift; sourceTree = "<group>"; };
-		8B4B171B29CA2FA4004D5A62 /* ContentViewA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewA.swift; sourceTree = "<group>"; };
+		8B4B171B29CA2FA4004D5A62 /* TitleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
 		8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBackground.swift; sourceTree = "<group>"; };
 		8B4B171D29CA2FA4004D5A62 /* LongText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongText.swift; sourceTree = "<group>"; };
 		8B4B171E29CA2FA4004D5A62 /* RedLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedLine.swift; sourceTree = "<group>"; };
@@ -129,8 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5B22CF29DD4A730039EE66 /* Helpers */,
-				8B4B171B29CA2FA4004D5A62 /* ContentViewA.swift */,
-				8B4B171929CA2FA4004D5A62 /* ContentViewB.swift */,
+				8B4B171B29CA2FA4004D5A62 /* TitleScreen.swift */,
 				8B4B171729CA2FA3004D5A62 /* VerticalRatioAlignment.swift */,
 				8B4B171A29CA2FA4004D5A62 /* VerticalRatioLayout.swift */,
 			);
@@ -295,8 +292,7 @@
 				8B5B22CB29DCBE6B0039EE66 /* HeaderContentView.swift in Sources */,
 				8B5B22C929DCBBF40039EE66 /* ListScreenDecorator.swift in Sources */,
 				8B4B172629CA2FA4004D5A62 /* RedLine.swift in Sources */,
-				8B4B172129CA2FA4004D5A62 /* ContentViewB.swift in Sources */,
-				8B4B172329CA2FA4004D5A62 /* ContentViewA.swift in Sources */,
+				8B4B172329CA2FA4004D5A62 /* TitleScreen.swift in Sources */,
 				8B4B172429CA2FA4004D5A62 /* BlueBackground.swift in Sources */,
 				8BD6CACF29CA323C00FFD6A9 /* ScreenType.swift in Sources */,
 				8BCD057C29EDED6F005CD88E /* BackgroundFrameView.swift in Sources */,

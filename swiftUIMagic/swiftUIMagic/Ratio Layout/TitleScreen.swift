@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentViewA: View {
+struct TitleScreen: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .verticalRatio)) {
             BlueBackground()
@@ -8,10 +8,10 @@ struct ContentViewA: View {
                 .alignmentGuide(.verticalRatio) {
                     $0[VerticalAlignment.center]
                 }
-//            RedLine()
-//                .alignmentGuide(.verticalRatio) {
-//                    $0[VerticalAlignment.center]
-//                }
+            RedLine()
+                .alignmentGuide(.verticalRatio) {
+                    $0[VerticalAlignment.center]
+                }
         }
         .foregroundColor(.white)
     }
@@ -19,6 +19,6 @@ struct ContentViewA: View {
 
 struct ContentViewA_Previews: PreviewProvider {
     static var previews: some View {
-        ContentViewA()
+        TitleScreen()
     }
 }

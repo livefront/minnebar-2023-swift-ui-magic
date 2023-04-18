@@ -4,11 +4,11 @@ import UIKit
 struct MainView: View {
     var body: some View {
         NavigationStack {
-            ContentViewA()
+            TitleScreen()
                 .navigationDestination(for: ScreenType.self) { screenType in
                     switch screenType {
                     case .splash:
-                        ContentViewA()
+                        TitleScreen()
                     case .list:
                         ListScreenDecorator()
                     case .detail(let talk):

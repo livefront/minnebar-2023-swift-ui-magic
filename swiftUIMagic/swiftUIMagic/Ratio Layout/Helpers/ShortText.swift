@@ -18,7 +18,6 @@ struct ShortText: View {
             .foregroundColor(.black)
             .multilineTextAlignment(.leading)
             .padding()
-            .padding([.top, .bottom], 128)
         }
     }
 }
