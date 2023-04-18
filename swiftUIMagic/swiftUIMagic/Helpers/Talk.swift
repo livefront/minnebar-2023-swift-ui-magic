@@ -63,4 +63,9 @@ struct Talk: Equatable, Hashable, Identifiable {
             longDescription: "Dive in with Livefront product manager Jennifer Lappin as she shares a few best practices around responding to app store reviews!"
         ),
     ]
+
+    static let veryLongList: [Talk] = {
+        let list = Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList// + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList + Talk.longList
+        return list.shuffled()
+    }()
 }

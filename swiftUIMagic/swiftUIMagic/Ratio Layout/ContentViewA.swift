@@ -3,8 +3,8 @@ import SwiftUI
 struct ContentViewA: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .verticalRatio)) {
-            BlueBackground()
             BubblesView()
+            BlueBackground()
             ShortText()
                 .alignmentGuide(.verticalRatio) {
                     $0[VerticalAlignment.center]

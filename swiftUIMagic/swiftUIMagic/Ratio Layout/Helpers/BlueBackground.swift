@@ -6,6 +6,7 @@ struct BlueBackground: View {
             LinearGradient(colors: [.clear, .accentColor], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1)).opacity(0.5)
             Rectangle()
                 .fill(Material.ultraThin)
+                .opacity(0.5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
