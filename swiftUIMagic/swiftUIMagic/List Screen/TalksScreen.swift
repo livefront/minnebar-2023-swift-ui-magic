@@ -14,36 +14,54 @@ struct TalksScreen: View {
     @State var stuckToBottomFooterFrame: CGRect = .zero
 
     @Namespace var namespace
+    @State var selectedTalk: Talk? = nil
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            ScrollView {
-                VStack(spacing: 0) {
-                    HeaderContentView()
-                    ForEach(Talk.list) { talk in
-                        NavigationLink(value: ScreenType.detail(namespace, talk)) {
+            if let talk = selectedTalk {
+                DetailScreen(namespace: namespace, talk: talk)
+                    .navigationBarItems(trailing: HStack {
+                        Button(
+                            action: { tapTalk(nil) },
+                            label: { Text("Done") }
+                        )
+                    })
+                    .navigationBarBackButtonHidden(true)
+            } else {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        HeaderContentView()
+                        ForEach(Talk.list) { talk in
                             TalkView(title: talk.title, date: talk.date) {
                                 Image(talk.imageName)
                                     .resizable()
                                     .imageScale(.large)
-                                    .frame(width: smallImageSize, height: smallImageSize)
                                     .clipShape(Circle())
                                     .overlay(
                                         Circle()
                                             .stroke(.gray, lineWidth: 1)
                                     )
+                                    .matchedGeometryEffect(id: talk.imageName, in: namespace)
+                                    .frame(width: smallImageSize, height: smallImageSize)
+                            }
+                            .onTapGesture {
+                                tapTalk(talk)
                             }
                         }
+                        FooterView()
+                            .readFrame(into: $scrollingFooterFrame)
+                            .opacity(isFooterStuckToBottom ? 0 : 1)
                     }
-                    FooterView()
-                        .readFrame(into: $scrollingFooterFrame)
-                        .opacity(isFooterStuckToBottom ? 0 : 1)
                 }
+                FooterView()
+                    .readFrame(into: $stuckToBottomFooterFrame)
+                    .opacity(isFooterStuckToBottom ? 1 : 0)
             }
-            FooterView()
-                .readFrame(into: $stuckToBottomFooterFrame)
-                .opacity(isFooterStuckToBottom ? 1 : 0)
         }
+    }
+
+    func tapTalk(_ talk: Talk?) {
+        withAnimation(.easeInOut(duration: 0.3)) { self.selectedTalk = talk }
     }
 }
 

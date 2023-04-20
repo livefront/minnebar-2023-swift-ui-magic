@@ -18,12 +18,13 @@ struct DetailScreen: View {
                     Image(talk.imageName)
                         .resizable()
                         .imageScale(.large)
-                        .frame(width: imageSize, height: imageSize)
                         .clipShape(Circle())
                         .overlay(
                             Circle()
                                 .stroke(.gray, lineWidth: 1)
                         )
+                        .matchedGeometryEffect(id: talk.imageName, in: namespace)
+                        .frame(width: imageSize, height: imageSize)
                     VStack(alignment: .leading) {
                         Text(talk.title)
                             .font(.title)
