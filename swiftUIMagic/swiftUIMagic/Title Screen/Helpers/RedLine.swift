@@ -5,6 +5,9 @@ struct RedLine: View {
         Rectangle()
             .foregroundColor(.red)
             .frame(maxWidth: .infinity, maxHeight: 4)
+            .alignmentGuide(.verticalRatio) {
+                $0[VerticalAlignment.center]
+            }
     }
 }
 
