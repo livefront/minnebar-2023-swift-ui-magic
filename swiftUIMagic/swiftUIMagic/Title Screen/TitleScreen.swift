@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TitleScreen: View {
     var body: some View {
-        ZStack(alignment: .center) {
+        VerticalRatioLayout(ratio: 0.66) {
             BubblesView()
             BlueBackground()
             ShortText()
