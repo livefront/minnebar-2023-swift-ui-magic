@@ -62,8 +62,8 @@ struct ListScreenDecorator: View {
                 .edgesIgnoringSafeArea([.leading, .trailing])
             }
         }
-        .readFrame(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewHeaderContentFrame)
-        .readFrame(from: TalkListScreenFramePreferenceKey.self, into: $scrollViewFrame)
+        .secFR2(from: HeaderViewFrameAnchorPreferenceKey.self, into: $scrollViewHeaderContentFrame)
+        .secFR2(from: TalkListScreenFramePreferenceKey.self, into: $scrollViewFrame)
         .toolbar {
             /// Replace the navigation title with an empty view when it should be hidden.
             ToolbarItem(placement: .principal) {
