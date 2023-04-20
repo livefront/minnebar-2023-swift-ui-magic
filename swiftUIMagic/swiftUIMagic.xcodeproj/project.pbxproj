@@ -22,6 +22,7 @@
 		8B4B172429CA2FA4004D5A62 /* BlueBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */; };
 		8B4B172529CA2FA4004D5A62 /* LongText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171D29CA2FA4004D5A62 /* LongText.swift */; };
 		8B4B172629CA2FA4004D5A62 /* RedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B171E29CA2FA4004D5A62 /* RedLine.swift */; };
+		8B559D5F29F12CB7000E3A81 /* View+ReadFrameObfuscated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B559D5E29F12CB7000E3A81 /* View+ReadFrameObfuscated.swift */; };
 		8B5B22C429DCA15C0039EE66 /* ColorCurveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22C329DCA15C0039EE66 /* ColorCurveBackground.swift */; };
 		8B5B22C729DCBA130039EE66 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22C629DCBA130039EE66 /* FloatingPointExtension.swift */; };
 		8B5B22C929DCBBF40039EE66 /* ListScreenDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B22C829DCBBF40039EE66 /* ListScreenDecorator.swift */; };
@@ -53,6 +54,7 @@
 		8B4B171C29CA2FA4004D5A62 /* BlueBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBackground.swift; sourceTree = "<group>"; };
 		8B4B171D29CA2FA4004D5A62 /* LongText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongText.swift; sourceTree = "<group>"; };
 		8B4B171E29CA2FA4004D5A62 /* RedLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedLine.swift; sourceTree = "<group>"; };
+		8B559D5E29F12CB7000E3A81 /* View+ReadFrameObfuscated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadFrameObfuscated.swift"; sourceTree = "<group>"; };
 		8B5B22C329DCA15C0039EE66 /* ColorCurveBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCurveBackground.swift; sourceTree = "<group>"; };
 		8B5B22C629DCBA130039EE66 /* FloatingPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExtension.swift; sourceTree = "<group>"; };
 		8B5B22C829DCBBF40039EE66 /* ListScreenDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenDecorator.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				8B5B22C829DCBBF40039EE66 /* ListScreenDecorator.swift */,
 				8BCD057D29EE7898005CD88E /* TalkView.swift */,
 				8B4B170E29CA2E9C004D5A62 /* View+ReadFrameSimple.swift */,
+				8B559D5E29F12CB7000E3A81 /* View+ReadFrameObfuscated.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				8B5B22CB29DCBE6B0039EE66 /* HeaderContentView.swift in Sources */,
 				8B5B22C929DCBBF40039EE66 /* ListScreenDecorator.swift in Sources */,
 				8B4B172629CA2FA4004D5A62 /* RedLine.swift in Sources */,
+				8B559D5F29F12CB7000E3A81 /* View+ReadFrameObfuscated.swift in Sources */,
 				8B4B172329CA2FA4004D5A62 /* TitleScreen.swift in Sources */,
 				8B4B172429CA2FA4004D5A62 /* BlueBackground.swift in Sources */,
 				8BD6CACF29CA323C00FFD6A9 /* ScreenType.swift in Sources */,

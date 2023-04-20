@@ -2,17 +2,6 @@ import SwiftUI
 
 struct TalksScreen: View {
 
-    /// `true` if the footer should be stuck to the bottom of the screen.
-    var isFooterStuckToBottom: Bool {
-        scrollingFooterFrame.minY < stuckToBottomFooterFrame.minY
-    }
-
-    /// The frame of the scrollable footer view.
-    @State var scrollingFooterFrame: CGRect = .zero
-
-    /// The frame of the non-scrollable footer view.
-    @State var stuckToBottomFooterFrame: CGRect = .zero
-
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
@@ -33,14 +22,9 @@ struct TalksScreen: View {
                             }
                         }
                     }
-                    FooterView()
-                        .readFrame(into: $scrollingFooterFrame)
-                        .opacity(isFooterStuckToBottom ? 0 : 1)
                 }
             }
             FooterView()
-                .readFrame(into: $stuckToBottomFooterFrame)
-                .opacity(isFooterStuckToBottom ? 1 : 0)
         }
     }
 }
