@@ -3,6 +3,7 @@ import SwiftUI
 struct DetailScreen: View {
 
     let imageSize: CGFloat = 150
+    let namespace: Namespace.ID
     let talk: Talk
 
     var body: some View {
@@ -51,8 +52,10 @@ struct DetailScreen: View {
 }
 
 struct DetailScreen_Previews: PreviewProvider {
+    @Namespace static var namespace
     static var previews: some View {
         DetailScreen(
+            namespace: namespace,
             talk: Talk(
                 imageName: "tyler-johnson-head-shot",
                 title: "Title",

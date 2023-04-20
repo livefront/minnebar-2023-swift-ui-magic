@@ -11,8 +11,8 @@ struct MainView: View {
                         TitleScreen()
                     case .list:
                         ListScreenDecorator()
-                    case .detail(let talk):
-                        DetailScreen(talk: talk)
+                    case .detail(let namespace, let talk):
+                        DetailScreen(namespace: namespace, talk: talk)
                     }
                 }
         }

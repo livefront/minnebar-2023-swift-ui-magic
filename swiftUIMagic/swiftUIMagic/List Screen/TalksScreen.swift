@@ -2,13 +2,15 @@ import SwiftUI
 
 struct TalksScreen: View {
 
+    @Namespace var namespace
+
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
                 VStack(spacing: 0) {
                     HeaderContentView()
                     ForEach(Talk.list) { talk in
-                        NavigationLink(value: ScreenType.detail(talk)) {
+                        NavigationLink(value: ScreenType.detail(namespace, talk)) {
                             TalkView(title: talk.title, date: talk.date) {
                                 Image(talk.imageName)
                                     .resizable()
