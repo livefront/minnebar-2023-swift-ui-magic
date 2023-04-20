@@ -5,7 +5,6 @@ struct TitleScreen: View {
         ZStack(alignment: .center) {
             BlueBackground()
             ShortText()
-//            RedLine()
         }
     }
 }
