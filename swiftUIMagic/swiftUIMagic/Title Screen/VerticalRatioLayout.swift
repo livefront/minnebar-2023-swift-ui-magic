@@ -9,8 +9,8 @@ struct VerticalRatioLayout: Layout {
         let maxHeight = subviews.map { $0.sizeThatFits(proposal).height }.max() ?? 0
 
         return CGSize(
-            width: min(proposal.width ?? .infinity, maxWidth),
-            height: min(proposal.height ?? .infinity, maxHeight)
+            width: maxWidth,
+            height: maxHeight
         )
     }
 
