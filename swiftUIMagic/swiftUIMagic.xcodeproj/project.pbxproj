@@ -94,10 +94,9 @@
 		8B4B16ED29CA2DA2004D5A62 /* swiftUIMagic */ = {
 			isa = PBXGroup;
 			children = (
-				8B5B22D429DF5D630039EE66 /* Custom Animation */,
 				8B4B171629CA2F84004D5A62 /* Title Screen */,
 				8B4B171529CA2F75004D5A62 /* List Screen */,
-				8B5B22D229DF5D360039EE66 /* Custom Transition */,
+				8B5B22D229DF5D360039EE66 /* Detail Screen */,
 				8B5B22D029DDBB8C0039EE66 /* Helpers */,
 				8B4B16F229CA2DA3004D5A62 /* Assets.xcassets */,
 				8B4B16F429CA2DA3004D5A62 /* Preview Content */,
@@ -172,35 +171,12 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8B5B22D229DF5D360039EE66 /* Custom Transition */ = {
+		8B5B22D229DF5D360039EE66 /* Detail Screen */ = {
 			isa = PBXGroup;
 			children = (
-				8B5B22D329DF5D450039EE66 /* Helpers */,
 				8B5B22D629DF68760039EE66 /* DetailScreen.swift */,
 			);
-			path = "Custom Transition";
-			sourceTree = "<group>";
-		};
-		8B5B22D329DF5D450039EE66 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		8B5B22D429DF5D630039EE66 /* Custom Animation */ = {
-			isa = PBXGroup;
-			children = (
-				8B5B22D529DF5D760039EE66 /* Helpers */,
-			);
-			path = "Custom Animation";
-			sourceTree = "<group>";
-		};
-		8B5B22D529DF5D760039EE66 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
+			path = "Detail Screen";
 			sourceTree = "<group>";
 		};
 		8BCD057729EDC0EB005CD88E /* Examples */ = {
