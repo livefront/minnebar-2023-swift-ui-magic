@@ -22,6 +22,7 @@ struct TalksScreen: View {
                             }
                         }
                     }
+
                 }
             }
             FooterView()
