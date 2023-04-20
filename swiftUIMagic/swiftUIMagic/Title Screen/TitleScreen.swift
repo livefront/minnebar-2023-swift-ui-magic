@@ -3,7 +3,7 @@ import SwiftUI
 struct TitleScreen: View {
     var body: some View {
         ZStack(alignment: .center) {
-            // Step 1: Implement the bubbles view and add it to the title screen.
+            BubblesView()
             BlueBackground()
             ShortText()
         }
