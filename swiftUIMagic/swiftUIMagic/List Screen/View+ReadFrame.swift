@@ -29,9 +29,43 @@ extension View {
         }
     }
 
+    func readFrame<K>(
+        from key: K.Type,
+        in coordinateSpace: CoordinateSpace = .global,
+        reader: @escaping (CGRect) -> Void
+    ) -> some View where K: FramePreferenceKey {
+        backgroundWithFrame(from: key, in: coordinateSpace) { frame in
+            // Using preferences in this way is a hack to allow calling a closure when layout
+            // changes.
+            Color.clear
+                .preference(key: CGRectPreferenceKey.self, value: frame)
+                .onPreferenceChange(CGRectPreferenceKey.self) { frame in
+                    reader(frame)
+                }
+        }
+    }
 
+    func readFrame<K>(
+        from key: K.Type,
+        in coordinateSpace: CoordinateSpace = .global,
+        into binding: Binding<CGRect>
+    ) -> some View where K: FramePreferenceKey {
+        readFrame(from: key, in: coordinateSpace) { frame in
+            binding.wrappedValue = frame
+        }
+    }
+
+    // One-step Read Frame into Binding
+    func readFrame(
+        in coordinateSpace: CoordinateSpace = .global,
+        into binding: Binding<CGRect>
+    ) -> some View {
+        writeFrame(to: ReadFramePreferenceKey.self)
+            .readFrame(from: ReadFramePreferenceKey.self, in: coordinateSpace, into: binding)
+    }
 }
 
+private struct ReadFramePreferenceKey: FramePreferenceKey {}
 
 
 
