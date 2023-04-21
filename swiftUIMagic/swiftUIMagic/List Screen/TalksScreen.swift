@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TalksScreen: View {
 
+
+
     @Namespace var namespace
 
     var body: some View {

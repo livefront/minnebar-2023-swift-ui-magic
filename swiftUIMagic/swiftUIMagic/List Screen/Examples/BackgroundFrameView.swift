@@ -8,8 +8,10 @@ struct BackgroundFrameView: View {
 
             Spacer()
         }
-        
+
     }
+
+
 }
 
 struct BackgroundFrameView_Previews: PreviewProvider {
