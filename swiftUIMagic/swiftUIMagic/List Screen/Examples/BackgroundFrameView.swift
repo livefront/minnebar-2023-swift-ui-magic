@@ -5,8 +5,10 @@ struct BackgroundFrameView: View {
         VStack {
             Spacer()
             Text("Hello, World!")
+
             Spacer()
         }
+        
     }
 }
 
