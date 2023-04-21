@@ -24,11 +24,11 @@ struct VerticalRatioLayout: Layout {
             let sizeThatFits = subview.sizeThatFits(
                 ProposedViewSize(width: bounds.width, height: bounds.height)
             )
-
-            let idealCenter = bounds.height * ratio
             let height = min(sizeThatFits.height, bounds.height)
             let width = min(sizeThatFits.width, bounds.width)
             let halfHeight = height / 2
+
+            let idealCenter = bounds.height * ratio
 
             let top: CGFloat
             if idealCenter + halfHeight > bounds.height {
