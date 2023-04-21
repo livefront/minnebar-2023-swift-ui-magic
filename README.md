@@ -5,6 +5,9 @@ SwiftUI has revolutionized the way developers create user interfaces for Apple�
 
 In this talk, we covered some of the techniques we’ve used in our projects to achieve custom UI designs. We used animation to add whimsy, implemented custom view alignment, created a new layout container, responded dynamically to user interaction, and improved navigation with custom transitions. With these tools you’ll be able to confidently tackle many types of custom interfaces in your SwiftUI apps.
 
+Requirements:
+* iOS 16+
+* Xcode 14.3+
 -----
 
 ### Bubble Animation
