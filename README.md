@@ -8,6 +8,8 @@ In this talk, we covered some of the techniques we’ve used in our projects to 
 -----
 
 ### Bubble Animation
+Add whimsy with animated profile bubbles.
+
 ![An app title screen with circular profile images floating by like bubbles.](/readmeResources/bubbleAnimation.gif)
 #### Notable Files
 * [BubblesView.swift](/swiftUIMagic/swiftUIMagic/Title%20Screen/BubblesView.swift)
@@ -17,6 +19,8 @@ In this talk, we covered some of the techniques we’ve used in our projects to 
 -----
 
 ### Custom Alignment and Layout
+Align views to a custom vertical postion.
+
 ![An app title screen with the title aligned 2/3 of the way down.](/readmeResources/alignment.png)
 #### Notable Files
 * [VerticalRatioAlignment.swift](/swiftUIMagic/swiftUIMagic/Title%20Screen/VerticalRatioAlignment.swift)
@@ -26,6 +30,8 @@ In this talk, we covered some of the techniques we’ve used in our projects to 
 -----
 
 ### Sticky Footer
+Read and respond to the frames of SwiftUI Views to create a footer label that sticks to the bottom of the screen.
+
 ![A list of talks being scrolled. The footer label is stuck to the bottom but pushed out of the way when the content approaches.](/readmeResources/stickyFooter.gif)
 #### Notable Files
 * [TalksScreen.swift](/swiftUIMagic/swiftUIMagic/List%20Screen/TalksScreen.swift)
@@ -36,6 +42,8 @@ In this talk, we covered some of the techniques we’ve used in our projects to 
 -----
 
 ### Custom Transition
+Add a custom animated transition when navigating between screens.
+
 ![A list of talks with one talk expanding to fill the screen when it is tapped.](/readmeResources/customTransition.gif)
 #### Notable Files
 * [TalksScreen.swift](/swiftUIMagic/swiftUIMagic/List%20Screen/TalksScreen.swift)
