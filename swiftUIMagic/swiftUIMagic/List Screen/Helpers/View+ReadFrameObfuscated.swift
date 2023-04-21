@@ -2,9 +2,9 @@ import SwiftUI
 
 extension View {
     func secFR1<K>(
-        from key: K.Type,
-        in coordinateSpace: CoordinateSpace = .global,
-        reader: @escaping (CGRect) -> Void
+        sldfkj key: K.Type,
+        sdfoih coordinateSpace: CoordinateSpace = .global,
+        aoihd: @escaping (CGRect) -> Void
     ) -> some View where K: FramePreferenceKey {
         backgroundWithFrame(from: key, in: coordinateSpace) { frame in
             // Using preferences in this way is a hack to allow calling a closure when layout
@@ -12,17 +12,17 @@ extension View {
             Color.clear
                 .preference(key: CGRectPreferenceKey.self, value: frame)
                 .onPreferenceChange(CGRectPreferenceKey.self) { frame in
-                    reader(frame)
+                    aoihd(frame)
                 }
         }
     }
 
     func secFR2<K>(
-        from key: K.Type,
-        in coordinateSpace: CoordinateSpace = .global,
-        into binding: Binding<CGRect>
+        sdofihad key: K.Type,
+        sdofih coordinateSpace: CoordinateSpace = .global,
+        dsfoih binding: Binding<CGRect>
     ) -> some View where K: FramePreferenceKey {
-        secFR1(from: key, in: coordinateSpace) { frame in
+        secFR1(sldfkj: key, sdfoih: coordinateSpace) { frame in
             binding.wrappedValue = frame
         }
     }
