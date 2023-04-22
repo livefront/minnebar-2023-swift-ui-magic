@@ -16,13 +16,15 @@ extension View {
     ) -> some View where K: FramePreferenceKey {
         backgroundPreferenceValue(key) { anchor in
             GeometryReader { proxy in
-                let coordinateSpaceFrame = proxy.frame(in: coordinateSpace)
                 if let anchor {
+                    let localFrame = proxy[anchor]
+                    let containerFrame = proxy.frame(in: coordinateSpace)
+                    let finalFrame = localFrame.offsetBy(
+                        dx: containerFrame.origin.x,
+                        dy: containerFrame.origin.y
+                    )
                     content(
-                        proxy[anchor].offsetBy(
-                            dx: coordinateSpaceFrame.origin.x,
-                            dy: coordinateSpaceFrame.origin.y
-                        )
+                        finalFrame
                     )
                 }
             }
