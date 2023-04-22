@@ -2,7 +2,7 @@ import SwiftUI
 
 enum VerticalRatioAlignmentId: AlignmentID {
     static func defaultValue(in context: ViewDimensions) -> CGFloat {
-        context.height * 0.66
+        context.height * 2/3
     }
 }
 
