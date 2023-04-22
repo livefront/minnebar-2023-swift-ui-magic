@@ -28,22 +28,19 @@ struct VerticalRatioLayout: Layout {
             let width = min(sizeThatFits.width, bounds.width)
             let halfHeight = height / 2
 
-            let idealCenter = bounds.height * ratio
+            var center = bounds.minY + bounds.height * ratio
 
-            let top: CGFloat
-            if idealCenter + halfHeight > bounds.height {
+            if center + halfHeight > bounds.maxY {
                 // Move up.
-                top = bounds.maxY - height
-            } else if idealCenter - halfHeight < 0 {
+                center = bounds.maxY - halfHeight
+            } else if center - halfHeight < bounds.minY {
                 // Move down.
-                top = bounds.minY
-            } else {
-                // Don't move.
-                top = idealCenter - halfHeight
+                center = bounds.minY + halfHeight
             }
 
             subview.place(
-                at: CGPoint(x: bounds.origin.x, y: top),
+                at: CGPoint(x: bounds.origin.x, y: center),
+                anchor: UnitPoint(x: 0, y: 0.5),
                 proposal: ProposedViewSize(width: width, height: height)
             )
         }
